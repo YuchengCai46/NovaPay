@@ -1,0 +1,78 @@
+# Environment / secrets
+.env
+.env.local
+*.env
+server.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest-cache/
+pytest-cache-files-*/
+.envrc
+
+# Virtual environments
+venv/
+env/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local dev overrides
+config.local.py
+
+# Cloudflare Worker
+cloudflare/wrangler.toml
+!cloudflare/wrangler.example.toml
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
+
+# Test artifacts
+*.txt
+*.log
+*.json
+!cloudflare/wrangler.example.toml
+!*.example
+scripts/
+deployed_*.js
+deployed_*.css
+i18n_debug.js
+test_*.*

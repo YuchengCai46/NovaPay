@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaPay V6.0 · 私人数字银行</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .topbar { position: relative; }
+    .lang-menu {
+      position: absolute; top: 56px; right: 16px;
+      background: #171b26; border: 1px solid #2a3040; border-radius: 12px;
+      padding: 6px; display: none; flex-direction: column; gap: 2px;
+      z-index: 60; min-width: 156px; box-shadow: 0 12px 34px rgba(0,0,0,.45);
+    }
+    .lang-opt {
+      display: flex; align-items: center; gap: 8px; padding: 9px 12px; border: none;
+      background: transparent; color: #e8eaf0; cursor: pointer; border-radius: 8px;
+      font-size: 13px; text-align: left; width: 100%;
+    }
+    .lang-opt:hover { background: rgba(231,201,122,.14); }
+    .lang-opt.active { color: #e7c97a; font-weight: 600; }
+    .lang-opt .dot { width: 7px; height: 7px; border-radius: 50%; background: #e7c97a; opacity: 0; }
+    .lang-opt.active .dot { opacity: 1; }
+  </style>
+</head>
+<body>
+  <!-- 启动闪屏 -->
+  <div id="splash">
+    <div style="text-align:center">
+      <div class="crest">NovaPay</div>
+      <div class="sub">Private Digital Bank</div>
+      <div class="ring"></div>
+    </div>
+  </div>
+
+  <div class="layout" id="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div><b>NovaPay</b><span data-i18n="brand_private">Private Bank</span></div>
+      </div>
+      <div class="nav-item active" data-nav="home"><span class="ic" data-i="home"></span> <span data-i18n="nav_home">首页</span></div>
+      <div class="nav-item" data-nav="cards"><span class="ic" data-i="card"></span> <span data-i18n="nav_cards">我的卡片</span></div>
+      <div class="nav-item" data-nav="transfer"><span class="ic" data-i="transfer"></span> <span data-i18n="nav_transfer">转账</span></div>
+      <div class="nav-item" data-nav="forex"><span class="ic" data-i="globe"></span> <span data-i18n="nav_forex">外汇中心</span></div>
+      <div class="nav-item" data-nav="escrow"><span class="ic" data-i="wallet"></span> <span data-i18n="nav_escrow">暂存池</span></div>
+      <div class="nav-item" data-nav="withdraw"><span class="ic" data-i="transfer"></span> <span data-i18n="nav_withdraw">提现</span></div>
+      <div class="nav-item" data-nav="giftcards"><span class="ic" data-i="gift"></span> <span data-i18n="nav_giftcards">礼品卡</span></div>
+      <div class="nav-item" data-nav="subscriptions"><span class="ic" data-i="sub"></span> <span data-i18n="nav_subscriptions">订阅</span></div>
+      <div class="nav-item" data-nav="suggestions"><span class="ic" data-i="chat"></span> <span data-i18n="nav_suggestions">建议反馈</span></div>
+      <div class="nav-item" data-nav="profile"><span class="ic" data-i="user"></span> <span data-i18n="nav_profile">个人中心</span></div>
+      <div class="nav-spacer"></div>
+      <div class="nav-item admin-hidden" id="navAdmin" data-nav="admin"><span class="ic" data-i="shield"></span> <span data-i18n="nav_admin">Admin 后台</span></div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger"><span class="ic" data-i="menu"></span></button>
+        <div class="title" id="pageTitle">首页</div>
+        <div class="grow"></div>
+        <button class="icon-btn" id="langBtn" title="Language / 语言"><span class="ic" data-i="globe"></span></button>
+        <div class="lang-menu" id="langMenu"></div>
+        <button class="icon-btn" id="themeToggle" title="切换深浅主题"><span class="ic" data-i="moon"></span></button>
+        <div class="pill gold" id="accountPill">—</div>
+        <div class="pill" id="notifyPill" style="cursor:pointer"><span class="ic" data-i="bell"></span> <span id="notifyCount">0</span></div>
+        <div class="avatar" id="userAvatar">U</div>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div class="toast" id="toastRoot"></div>
+
+  <script src="/js/icons.js?v=20260828225257"></script>
+  <script src="/js/i18n.js?v=20260828225257"></script>
+  <script src="/js/disclaimer.js?v=20260828225257"></script>
+  <script src="/js/app.js?v=20260828225257"></script>
+</body>
+</html>
